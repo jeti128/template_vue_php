@@ -1,7 +1,10 @@
 .DS_Store
 /data/mysql/db/
+/logs/mysql/
+/logs/apache2/
 /src/frontend/node_modules
 /src/frontend/dist
+/src/frontend/builded
 /src/frontend/tests/e2e/videos/
 /src/frontend/tests/e2e/screenshots/
 
