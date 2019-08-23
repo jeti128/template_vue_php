@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  web:
+    build: 
+      context: ./dockers/apache2php7/
+    container_name: 'apache2'
+    ports:
+      - 8080:80
+    volumes:
+      - ./src/frontend/builded/:/var/www/html/
+      - ./data/frontend/:/var/www/html/assets/
+      - ./src/backend/:/var/www/html/backend/
+      - ./logs/apache2/:/var/log/apache2/
+      - ./configs/apache2/sites-available/:/etc/apache2/sites-available/
+      - ./configs/apache2/password/:/etc/apache2/password/
+    links:
+      - mysql
+
+  mysql:
+    build: 
+      context: ./dockers/mysql/
+    container_name: 'mysql'
+    volumes:
+      - ./data/mysql/db/:/var/lib/mysql/
+      - ./logs/mysql/:/var/log/mysql/
+    environment:
+      - MYSQL_ROOT_PASSWORD=123kjhRT12
+      - MYSQL_DATABASE=demo
+      - MYSQL_USER=demo
+      - MYSQL_PASSWORD=QfsQ987dF
+    ports:
+      - 3307:3306
