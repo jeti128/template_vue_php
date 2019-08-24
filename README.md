@@ -19,7 +19,12 @@
 ## Descript
 
 Its a simple template project for vue frontend php7+apache2 backend mysql database in doecker.
-**php mysql host** : *mysql*
+
+## Public ports
+
+- **php mysql host** : *mysql*
+- **apache port:**: 8080
+- **mysql port:**: 3307
 
 ### Conceptions
 
@@ -27,8 +32,9 @@ Clone and play project for vue php combination.
 
 ## Prepare for build
 
-1. **docker-compose.yml**
-    open via text editor and edit mysql docker environment (MYSQL_ROOT_PASSWORD, MYSQL_DATABASE,MYSQL_USER,MYSQL_PASSWORD)
+1. **docker-compose.yml** open via text editor
+    1. edit **container_name**
+    2. edit **mysql** docker **environment** (MYSQL_ROOT_PASSWORD, MYSQL_DATABASE,MYSQL_USER,MYSQL_PASSWORD)
 2. **dockers/mysql/install.sql**
     open via text editor and create your database or change your backup file
 3. **configs/apache2/sites-available/000-default.conf**
